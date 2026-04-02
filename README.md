@@ -2,69 +2,19 @@
 
 目前使用 C++ Qt 5.14 版本，模拟实现 Web 组件库 Element Plus ( Element UI ) 的相关控件。
 
-> 本人使用的是缩放比例为125%的2k显示器。可能没有照顾到其他缩放比例，有些控件尺寸可能略大。
->
-> 为开源生态贡献一份力量是我一直以来的目标，虽实力有限，仍不断前进。
+> 原仓库地址：https://github.com/yyx-dev/qt-element-ui
 >
 > 交流群：979732179
 
-#### 编译方法
+#### 更新内容
+##### 一、Message类修改、添加MessageManager类
+1. 为Message类添加淡入、淡出效果，同时不再负责自身的位置计算。增加回调信号、设置不自动关闭等等。
+2. 新增MessageManager类，统一管理Message的位置，并实现消息队列的上移效果等。
 
-1. cmake
-
-```
-mkdir -p build && cd build
-cmake .. -G \"MinGW Makefiles\" -DCMAKE_CXX_COMPILER=g++ && make -j16
-./qt-element-ui
-```
-
-2. qmake
-
-```
-mkdir -p build && cd build
-qmake.exe ../qt-element-ui.pro && $(MAKE) -j16
-cd release && ./qt-element-ui
-```
-
-#### 实际效果
-
-<img src="./images/frameless-example.png"  />
+###### 效果预览
+![msg](https://github.com/user-attachments/assets/7895b1a6-f7be-4e38-a63b-10ff0c875791)
 
 ---
-
-<img src="./images/text-example.png"  />
-
----
-
-<img src="./images/button-example.png"  />
-
----
-
-<img src="./images/input-example.png"  />
-
----
-
-<img src="./images/message-example.png"  />
-
----
-
-<img src="./images/data-example.png"  />
-
----
-
-<img src="./images/panel-example.png"  />
-
----
-
-<img src="./images/progress-example.png"  />
-
----
-
-<img src="./images/form-example.png"  />
-
----
-
-<img src="./images/tabs-example.png"  />
 
 #### 代码规范
 
